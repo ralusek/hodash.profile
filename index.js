@@ -5,7 +5,7 @@
  *
  */
 module.exports = function(name) {
-  return new Timer(name);
+  return (new Timer(name));
 };
 
 
@@ -13,7 +13,7 @@ module.exports = function(name) {
 // This establishes a private namespace.
 const namespace = new WeakMap();
 function p(object) {
-  if ( namespace.has(object)) namespace.set(object, {});
+  if (!namespace.has(object)) namespace.set(object, {});
   return namespace.get(object);
 }
 
